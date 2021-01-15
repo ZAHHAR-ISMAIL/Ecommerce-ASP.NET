@@ -1,0 +1,22 @@
+﻿@model  appAchat_MVC.Models.Video
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="inner">
+    <a href="#"><img class="card-img-top" src="/static/@Model.Image" alt="Card image cap"></a>
+</div>
+
+<h2>@Model.Name</h2>
+<h2>Duration: @Model.Duration </h2>
+<h2>Prix: @Model.Prix DH</h2>
+<a href="#">@Html.ActionLink("Buy now", "Buy", new { id = @Model.ID  },
+           new { @class = "btn btn-success" })</a>
+<style>
+    img {
+      
+        height: 200px;
+        margin: 10px;
+    }
+</style>

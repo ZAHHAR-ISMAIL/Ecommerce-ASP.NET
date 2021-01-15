@@ -1,0 +1,84 @@
+﻿
+
+@model IEnumerable<appAchat_MVC.Models.Video>
+
+@{
+    ViewBag.Title = "Home - ZAH Store";
+}
+
+
+
+
+<div class="container center-block">
+    <div class="row justify-content-center">
+        @foreach (var item in Model)
+        { <div class="col-md-4"> 
+                <div class="card shadow" style="width: 30rem;">
+                    <div class="inner">
+                        <a href="#"><img class="card-img-top" src="/static/@Html.DisplayFor(modelItem => item.Image)"  alt="Card image cap"></a>
+                    </div>
+                    <div class="card-body text-center">
+
+                        <p class="card-text">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </p>
+
+                        <p class="card-text">
+                           Prix : @Html.DisplayFor(modelItem => item.Prix) DH
+                        </p>
+                        <a href="#">@Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-success" })</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+        </div>
+</div>
+
+<style>
+  
+    .card {
+        margin-top: 8%;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px;
+        box-shadow: 0 0 3px #dcdcdc;
+        font-family: 'Lato', sans-serif;
+        transition: all .2s ease-in-out;
+    }
+
+        .card:hover {
+            box-shadow: 0 3px 22px rgba(0,0,0,.1);
+            transform: translateY(-5px);
+        }
+
+    img {
+        width: 100%;
+        height: 200px;
+        margin: 0px;
+    }
+
+
+
+    .card-title {
+        color: #424a52;
+        margin: 0px;
+        text-align: left;
+    }
+
+        .card-title:hover {
+            color: #ff0000;
+        }
+
+    .card-text {
+        color: #909ca7;
+        font-size: 16px;
+        margin:  10px;
+        text-align: left;
+    }
+
+    .btn {
+        margin: 10px;
+    }
+</style>
